@@ -8,4 +8,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MorningScene.unity
+    guid: e689429cf0bba4e97881b2e11d750898
+  - enabled: 1
+    path: Assets/Scenes/DungeonA.unity
+    guid: e9fe4ad244b9c4e41a18114c9905b76a
+  - enabled: 1
+    path: Assets/Scenes/DungeonB.unity
+    guid: 03f9c8ae7313d45a1a77bff50d7cd3d0
+  - enabled: 1
+    path: Assets/Scenes/DungeonC.unity
+    guid: 652586cb00c9a40ee96ce476349b04ca
+  - enabled: 1
+    path: Assets/Scenes/DungeonD.unity
+    guid: 17e93526e9fd64718969741254a6719b
+  - enabled: 1
+    path: Assets/Scenes/DungeonE.unity
+    guid: 007050b1641974803ba09da51523a638
+  - enabled: 1
+    path: Assets/Scenes/BossBattleScene.unity
+    guid: 28c49bca813ff4642a535b36e7cc24b3
+  - enabled: 1
+    path: Assets/Scenes/SecretGarden.unity
+    guid: f0648ab0212dd4a9db8f8eeed063a8f6
   m_configObjects: {}
