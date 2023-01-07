@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f0cbf2783a756ababcc7abf4945e633b67e74e617e1ab9e19b2346907bf8ce4
-size 573
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+
+public class Day_UI : MonoBehaviour
+{
+    private TextMeshProUGUI textvariable;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        textvariable = GetComponent<TextMeshProUGUI>();
+        textvariable.text = GameManager.Instance.Day.ToString();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+         textvariable.text = "Day : " + GameManager.Instance.Day.ToString();
+    }
+}

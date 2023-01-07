@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81dae4fd63777ca9fd61cf0bb45c8eb83f836a67663dc163e132f42f3b21e015
-size 900
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using static Define;
+
+public class Timer_UI : MonoBehaviour
+{
+    private TextMeshProUGUI timer;
+    public float LimitTime;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        timer = GetComponent<TextMeshProUGUI>();
+        timer.text = GameManager.Instance.Day.ToString();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        LimitTime -= Time.deltaTime;
+        timer.text = "Remain Time : " + Mathf.Round(LimitTime);
+
+        if(LimitTime <= 0)
+        {
+            Debug.Log("제한 시간 끝!");
+            GameManager.Instance.MovePhase();
+            // Debug.Log(GameManager.Instance.CurrentPhase);
+            GameSceneManager.Instance.LoadStage((MapStage)7);
+        }
+    }
+
+}
