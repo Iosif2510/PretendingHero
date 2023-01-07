@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6a1af7e7-c516-4d4a-a212-ae12133d60bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/RedDino.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/RedDino.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/blueDino.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/blueDino.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/greenDino.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/greenDino.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/yellowDino.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/yellowDino.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minseo/OverallSystem_Minseo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minseo/OverallSystem_Minseo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
