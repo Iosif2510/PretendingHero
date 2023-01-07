@@ -11,6 +11,7 @@ TagManager:
   - Down
   - Monster
   - NPC
+  - Obstacle
   layers:
   - Default
   - TransparentFX
