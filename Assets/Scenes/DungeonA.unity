@@ -8050,10 +8050,9 @@ MonoBehaviour:
   - {fileID: 1110965241}
   createTime: 30
   monster:
-  - {fileID: 4678864755625215352, guid: 919dd60d47c96ef4285225b78cf44684, type: 3}
   - {fileID: 3203775088570319595, guid: 1fa81fd570bcf9e47a2ec8856212a79d, type: 3}
-  - {fileID: 2163674431477236975, guid: f135e06af7fd6e149810229da5261bdc, type: 3}
   - {fileID: 2923844131710216978, guid: 29188c2ea525e4c459304d0717710da4, type: 3}
+  - {fileID: 2163674431477236975, guid: f135e06af7fd6e149810229da5261bdc, type: 3}
 --- !u!4 &1701990377
 Transform:
   m_ObjectHideFlags: 0
