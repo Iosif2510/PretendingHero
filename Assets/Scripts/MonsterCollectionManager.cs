@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterCollectionManager : UnitySingleton<MonsterCollectionManager>
 {
+    public static int monsterNumber = 20;
+
     [SerializeField]
     private List<MonsterData> collectableMonsters;
 
@@ -34,6 +36,11 @@ public class MonsterCollectionManager : UnitySingleton<MonsterCollectionManager>
             collectedMonsters.Add(monster, 0);
         }
         // collectedMonsters[collectableMonsters[0]] = 3;
+    }
+
+    public void CollectMonster(MonsterData monster, int number)
+    {
+        collectedMonsters[monster] = number;
     }
 
     public void CollectMonster(MonsterData monster)

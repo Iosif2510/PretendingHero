@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-   
+    public int stageLevel;
     public Transform[] spawnPoints;
     public float createTime = 3f;
     //public float curtime; 
@@ -24,21 +24,17 @@ public class SpawnManager : MonoBehaviour
        
     IEnumerator CreateMonster()
     {
-
-        for(int i=0; i<5; i++)
+        while (true)
         {
-            //몬스터의 생성 주기 시간만큼 대기
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                int j = Random.Range(0, monster.Count);
+                Instantiate(monster[j], spawnPoints[i]);
+            }
             yield return new WaitForSeconds(createTime);
-
-            //몬스터의 생성
-            Instantiate(monster[i], spawnPoints[i]);
         }
 
         yield return null;
         
-        
     }
-
-
-    
 }

@@ -6,16 +6,16 @@ using static Define;
 public class GameManager : UnitySingleton<GameManager>
 {
     private DayPhase currentPhase;
-    public int Day => dayNum;
     private int dayNum;
-
-    public int DungeonUnlockNumber => dungeonUnlockNumber;
     private int dungeonUnlockNumber;  // number of unlocked dungeon
-    //public int DungeonUnlockNumber => dungeonUnlockNumber;
 
+    public int DungeonUnlockNumber
+    {
+        get => dungeonUnlockNumber;
+        set => dungeonUnlockNumber = value;
+    }
     public int DayNum { get { return dayNum; } }
     public DayPhase CurrentPhase { get { return currentPhase; }}
-
 
     // Start is called before the first frame update
     void Awake()
@@ -23,13 +23,17 @@ public class GameManager : UnitySingleton<GameManager>
         dayNum = 1;
         dungeonUnlockNumber = 1;
         // UIManager.Instance.UpdateDay();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         
     }
 
- 
-    private void Update () 
+    public void SetDay(int day)
     {
-        
+        dayNum = day;
     }
 
     public void NextDay() 
@@ -51,6 +55,4 @@ public class GameManager : UnitySingleton<GameManager>
         MovePhase(phase);
         // Debug.Log(phase);
     }
-
-
 }

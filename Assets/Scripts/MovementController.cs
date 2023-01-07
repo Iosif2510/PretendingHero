@@ -4,23 +4,26 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class MovementController : MonoBehaviour, Creature
 {
     [SerializeField] private float speed;
-    [SerializeField] private PlayerSkillInfos skillInfos;
+    private PlayerSkillInfos skillInfos {get => PlayerDataManager.Instance.skillInfos;}
 
     // Temp
-    public float hp, maxHp;
-    public float exp, maxExp;
-    public int level;
+    public float hp {get => PlayerDataManager.Instance.hp; set => PlayerDataManager.Instance.hp = value;}
+    public float maxHp {get => PlayerDataManager.Instance.maxHp; set => PlayerDataManager.Instance.maxHp = value;}
+    public float exp {get => PlayerDataManager.Instance.exp; set => PlayerDataManager.Instance.exp = value;}
+    public float maxExp {get => PlayerDataManager.Instance.maxExp; set => PlayerDataManager.Instance.maxExp = value;}
+    public int level {get => PlayerDataManager.Instance.level; set => PlayerDataManager.Instance.level = value;}
 
-    public int skillPoint;
+    public int skillPoint {get => PlayerDataManager.Instance.skillPoint; set => PlayerDataManager.Instance.skillPoint = value;}
     
-    private float[] _skillLevels;
-    private float[] _skillCooldown;
-    public float[] SkillLevels => _skillLevels;
-    public float[] SkillCooldown => _skillCooldown;
+    public float[] SkillLevels {get => PlayerDataManager.Instance.skillLevels; set => PlayerDataManager.Instance.skillLevels = value;}
+    public float[] SkillCooldown {get => PlayerDataManager.Instance.skillCooldown; set => PlayerDataManager.Instance.skillCooldown = value;}
     // 
+
+    
+    public bool Transparent_ => _transparent;
     
     
     private Vector2 _velocity;
@@ -30,7 +33,12 @@ public class MovementController : MonoBehaviour
     private bool _isAttacking;
     private bool _dash;
     private bool _guard;
+    private bool _removeTrap;
     private bool _transparent;
+
+    private float _invincibilityTime;
+    private float _knockbackTime;
+    
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
@@ -39,7 +47,7 @@ public class MovementController : MonoBehaviour
     public void AddSkillLevel(int index)
     {
         if (skillPoint == 0) return;
-        _skillLevels[index]++;
+        SkillLevels[index]++;
         skillPoint--;
     }
     private void Start()
@@ -48,20 +56,20 @@ public class MovementController : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        _skillLevels = new float[skillInfos.skillCooldown.Length];
-        _skillCooldown = new float[skillInfos.skillCooldown.Length];
-
         _transparent = false;
-
-        hp = maxHp;
     }
 
     private void Update()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
 
+        _knockbackTime -= Time.deltaTime;
+        _invincibilityTime -= Time.deltaTime;
+        
         hp = Mathf.Clamp(hp, 0, maxHp);
         exp = Mathf.Clamp(exp, 0, maxExp);
+
+        if (hp <= 0) return;
 
         if (exp >= maxExp)
         {
@@ -84,24 +92,24 @@ public class MovementController : MonoBehaviour
         }
         
         // Dash : skill index == 0
-        if (Input.GetKeyDown(KeyCode.Q) && !_isAttacking && _direction.magnitude > 0 && _skillCooldown[0] <= 0
-            && _skillLevels[0] > 0)
+        if (Input.GetKeyDown(KeyCode.Q) && !_isAttacking && _direction.magnitude > 0 && SkillCooldown[0] <= 0
+            && SkillLevels[0] > 0)
         {
             StartCoroutine("Dash");
             SetCooldown(0);
         }
         
         // Guard : skill index == 2
-        if (Input.GetKeyDown(KeyCode.W) && !_isAttacking && _skillCooldown[2] <= 0
-            && _skillLevels[2] > 0)
+        if (Input.GetKeyDown(KeyCode.W) && !_isAttacking && SkillCooldown[2] <= 0
+            && SkillLevels[2] > 0)
         {
             StartCoroutine("Guard");
             SetCooldown(2);
         }
         
         // Concentration : skill index == 4
-        if (Input.GetKeyDown(KeyCode.E) && !_isAttacking && _skillCooldown[4] <= 0
-            && _skillLevels[4] > 0)
+        if (Input.GetKeyDown(KeyCode.E) && !_isAttacking && SkillCooldown[4] <= 0
+            && SkillLevels[4] > 0)
         {
             StartCoroutine("Concentration");
             SetCooldown(4);
@@ -109,9 +117,9 @@ public class MovementController : MonoBehaviour
         
         // Transparent : skill index == 5
         if (Input.GetKeyDown(KeyCode.R) && !_isAttacking
-                                        && _skillLevels[5] > 0)
+                                        && SkillLevels[5] > 0)
         {
-            if (!_transparent && _skillCooldown[5] <= 0)
+            if (!_transparent && SkillCooldown[5] <= 0)
             {
                 StartCoroutine("Transparent");
                 SetCooldown(5);
@@ -120,14 +128,14 @@ public class MovementController : MonoBehaviour
             {
                 _transparent = false;
                 _spriteRenderer.color += new Color(0, 0, 0, 0.5f);
-                _skillCooldown[5] /= 5;
+                SkillCooldown[5] /= 5;
             }
         }
 
         // Skill Cooldown...
-        for (int i = 0; i < _skillCooldown.Length; i++)
+        for (int i = 0; i < SkillCooldown.Length; i++)
         {
-            if (_skillCooldown[i] > 0) _skillCooldown[i] -= Time.deltaTime;
+            if (SkillCooldown[i] > 0) SkillCooldown[i] -= Time.deltaTime;
         }
         
         if (_isAttacking)
@@ -149,6 +157,12 @@ public class MovementController : MonoBehaviour
     {
         _velocity = Vector2.zero;
 
+        if (hp <= 0)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+        
         if (!_isAttacking)
         {
             // Move
@@ -177,13 +191,13 @@ public class MovementController : MonoBehaviour
 
     private void SetCooldown(int index)
     {
-        _skillCooldown[index] = GetCooldown(index);
+        SkillCooldown[index] = GetCooldown(index);
     }
 
     public float GetCooldown(int index)
     {
         return skillInfos.skillCooldown[index]
-               - skillInfos.cooldownDecrement[index] * _skillLevels[index];
+               - skillInfos.cooldownDecrement[index] * SkillLevels[index];
     }
 
     private void Interaction()
@@ -203,6 +217,20 @@ public class MovementController : MonoBehaviour
                 {
                     Interactable interatable = hit.collider.GetComponent<Interactable>();
                     if (interatable != null) interatable.Interact();
+                }
+
+                if (hit.collider.tag == "Monster" && !_isAttacking)
+                {
+                    var mon = hit.collider.GetComponent<Monster>();
+                    if (mon.trapped && SkillCooldown[3] <= 0 && SkillLevels[3] > 0)
+                    {
+                        StartCoroutine(RemoveTrap(mon));
+                    } else if (mon.currentHealth <= mon.data._health * 0.2f )
+                    {
+                        SetCooldown(1);
+                        MonsterCollectionManager.Instance.CollectMonster(mon.data);
+                        Destroy(mon.gameObject);
+                    }
                 }
             }
         }
@@ -255,12 +283,29 @@ public class MovementController : MonoBehaviour
         _isAttacking = false;
         _guard = false;
     }
+
+    private IEnumerator RemoveTrap(Monster monster)
+    {
+        _isAttacking = true;
+        _removeTrap = true;
+
+        yield return new WaitForSeconds(1 - skillInfos.abilityIncrement[3] * level);
+
+        if (_removeTrap)
+        {
+            MonsterCollectionManager.Instance.CollectMonster(monster.data);
+            Destroy(monster.gameObject);
+            SetCooldown(3);
+            _removeTrap = false;
+            _isAttacking = false;
+        }
+    }
     private IEnumerator Concentration()
     {
         _isAttacking = true;
         for (int i = 0; i<5; i++)
         {
-            hp += 10 + _skillLevels[4] * skillInfos.abilityIncrement[4];
+            hp += 10 + SkillLevels[4] * skillInfos.abilityIncrement[4];
             yield return new WaitForSeconds(1f);
         } 
         _isAttacking = false;
@@ -276,5 +321,42 @@ public class MovementController : MonoBehaviour
             _transparent = false;
             _spriteRenderer.color += new Color(0, 0, 0, 0.5f);
         }
+    }
+    
+    // HIT
+    public void Hit(float damage, Vector2 knockback, float backTime)
+    {
+        if (_invincibilityTime > 0) return;
+        hp -= (int) damage;
+        _rigidbody.velocity = knockback;
+        _knockbackTime = backTime;
+        _invincibilityTime = 1f;
+        StartCoroutine(HitSparkle());
+        
+        if (_removeTrap)
+        {
+            SetCooldown(3);
+            _removeTrap = false;
+            _isAttacking = false;
+        }
+
+        if (hp <= 0) Die();
+    }
+    public void Die()
+    {
+        _isAttacking = false;
+    }
+
+    IEnumerator HitSparkle()
+    {
+        Color color = _spriteRenderer.color;
+        for (int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(0.08f);
+            if (i%2 == 0) _spriteRenderer.color -= new Color(0, 0, 0, 1);
+            else _spriteRenderer.color += new Color(0, 0, 0, 1);
+        }
+
+        _spriteRenderer.color = color;
     }
 }

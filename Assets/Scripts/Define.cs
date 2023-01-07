@@ -9,7 +9,7 @@ public class Define
         Morning,
         Day,
         BossFight,
-        Night
+        Night,
     }
 
     public enum MapStage
@@ -21,6 +21,7 @@ public class Define
         DungeonC = 4,
         DungeonD = 5,
         DungeonE = 6,
-        BossBattleScene = 7
+        BossBattleScene = 7,
+        GameOverScene = 8,
     }
 }
