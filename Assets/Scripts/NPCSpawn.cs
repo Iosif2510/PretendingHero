@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NPCSpawn : MonoBehaviour
 {
-    public Transform[] spawnPoints;
+    private Transform[] spawnPoints;
     public int NPCnum;  //1개에 대해
-    private List<GameObject> Npc = new List<GameObject>();
+    public List<GameObject> Npc = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class NPCSpawn : MonoBehaviour
         {
             spawnPoints[i++] = child;
         }
-        for (int i=0; i<NPCnum; i++)
+        for (i=0; i<NPCnum; i++)
         {
             Instantiate(Npc[0], spawnPoints[i]);
             Instantiate(Npc[1], spawnPoints[i+NPCnum]);

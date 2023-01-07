@@ -22,8 +22,13 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         MaxMonster = 4*stageLevel + 3;       // Max 몬스터 수
-       InvokeRepeating("spawnMonster", 1, 2); //1초후 부터, 2초마다 반복해서 실행
+        InvokeRepeating("spawnMonster", 1, 2); //1초후 부터, 2초마다 반복해서 실행
     
+    }
+
+    public void StopSpawn()
+    {
+        CancelInvoke("spawnMonster");
     }
 
        

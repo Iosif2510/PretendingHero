@@ -45,9 +45,10 @@ public class Timer_UI : MonoBehaviour
                 {
                     delMonster[i].gameObject.SetActive(false);
                 }
+                theSpawnManager.StopSpawn();
 
                 theSpawnManager.createBoss();
-                LimitTime = 10;
+                LimitTime = 100;
                 boss = false;
             }
 

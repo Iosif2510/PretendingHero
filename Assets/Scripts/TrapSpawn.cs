@@ -17,7 +17,7 @@ public class TrapSpawn : MonoBehaviour
         {
             spawnPoints[i++] = child;
         }
-        for (int i=0; i<trapNum; i++)
+        for (i=0; i<trapNum; i++)
         {
             Instantiate(trapObject, spawnPoints[i]);
         }
