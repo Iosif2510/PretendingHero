@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6a1af7e7-c516-4d4a-a212-ae12133d60bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Datas/Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Datas/Data.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MorningScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MorningScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CooldownUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CooldownUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MinseoTest/TMP_UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MinseoTest/TMP_UI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/blueDino.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonA/blueDino.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/misc/shadow_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/misc/shadow_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - doux.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - doux.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - mort.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - mort.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - tard.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - tard.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - vita.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/dinoCharactersVersion1.1/sheets/DinoSprites - vita.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,15 +24,23 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CooldownUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MinseoTest/TMP_UI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSkillInfos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Potal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/YZMatcher.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SpawnManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="TaskManager">
     <servers />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
 </project>
