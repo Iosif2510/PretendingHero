@@ -14,7 +14,7 @@ public class Timer_UI : MonoBehaviour
     void Start()
     {
         timer = GetComponent<TextMeshProUGUI>();
-        timer.text = GameManager.Instance.Day.ToString();
+        timer.text = GameManager.Instance.DayNum.ToString();
     }
 
     // Update is called once per frame

@@ -13,12 +13,12 @@ public class Day_UI : MonoBehaviour
     void Start()
     {
         textvariable = GetComponent<TextMeshProUGUI>();
-        textvariable.text = GameManager.Instance.Day.ToString();
+        textvariable.text = GameManager.Instance.DayNum.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-         textvariable.text = "Day : " + GameManager.Instance.Day.ToString();
+         textvariable.text = "Day : " + GameManager.Instance.DayNum.ToString();
     }
 }
