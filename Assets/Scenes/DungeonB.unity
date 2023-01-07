@@ -1875,7 +1875,7 @@ MonoBehaviour:
   - {fileID: 3099944809875171596, guid: ce6900214c832a247a402de4471c47e5, type: 3}
   - {fileID: 6407075477486062090, guid: 9d0845b3b5195d442a53e4ae7581a9b1, type: 3}
   - {fileID: 6188826490920924823, guid: dfd95eb9b8412534683251fa525950e3, type: 3}
-  - {fileID: 6535427828753840438, guid: 34978d9637434884aaeac8279fb56159, type: 3}
+  bossmonster: {fileID: 6535427828753840438, guid: 34978d9637434884aaeac8279fb56159, type: 3}
 --- !u!4 &441106714
 Transform:
   m_ObjectHideFlags: 0
@@ -24620,6 +24620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce31d6a1a839c184b9bbb3a343fb02a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theSpawnManager: {fileID: 0}
   LimitTime: 30
 --- !u!114 &1654878549
 MonoBehaviour:
