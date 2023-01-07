@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2de1f7eb96ec7f5b4eb59112790f9a2b87794bcb1f2213677aa60a7251762a59
-size 467
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static Define;
+
+public class Potal : MonoBehaviour, Interactable
+{
+    [SerializeField] private int stage;
+    [SerializeField] private bool dayPhaseShift;
+    private bool to_next = false;
+
+    
+    public void Interact()
+    {
+        if (dayPhaseShift) GameManager.Instance.MovePhase();
+        // Debug.Log(GameManager.Instance.CurrentPhase);
+        GameSceneManager.Instance.LoadStage((MapStage)stage);
+    }
+}
