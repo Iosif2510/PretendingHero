@@ -158,6 +158,8 @@ public class Monster : MonoBehaviour, Creature, Interactable
                         break;
                 }
 
+                if (_sprite.flipX && monster.velocity.x > 0) _sprite.flipX = false;
+                else if (!_sprite.flipX && monster.velocity.x < 0) _sprite.flipX = true;
                 monster.velocity = monster.velocity.normalized * data._speed;
             }
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -108,6 +109,11 @@ public class NPC : MonoBehaviour, Creature
     {
         if (!isAttack)
         {
+            if (_target != null)
+            {
+                //멈춤, 왼쪽, 오른쪽, 위, 아래 = 0, 1, 2, 3, 4
+                _dir = (_target.transform.position - transform.position).normalized;
+            }
             _target = mon;
             _animator.SetTrigger("attack");
             isAttack = true;
@@ -129,6 +135,7 @@ public class NPC : MonoBehaviour, Creature
     public void Die()
     {
         isAttack = false;
+        Destroy(gameObject);
     }
     
     IEnumerator HitSparkle()

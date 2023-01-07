@@ -6,12 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="6a1af7e7-c516-4d4a-a212-ae12133d60bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Datas/Archer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Datas/Archer.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minseo/OverallSystem_Minseo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minseo/OverallSystem_Minseo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MinseoTest/TMP_UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MinseoTest/TMP_UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCRemote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCRemote.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCSight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCSight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerDataManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/0x72_DungeonTilesetII_v1.4/0x72_DungeonTilesetII_v1.4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/YongchanJo/0x72_DungeonTilesetII_v1.4/0x72_DungeonTilesetII_v1.4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCRemote.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCSight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCWarrior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSkillInfos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Potal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/YZMatcher.cs" root0="FORCE_HIGHLIGHTING" />
@@ -92,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673102873327</updated>
-      <workItem from="1673102885407" duration="7750000" />
+      <workItem from="1673102885407" duration="11023000" />
     </task>
     <servers />
   </component>

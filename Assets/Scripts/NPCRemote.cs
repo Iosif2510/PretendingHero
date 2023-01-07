@@ -9,8 +9,13 @@ public class NPCRemote : NPC
     {
         if (isAttack) return;
         
-        
         base.Attack(mon);
+        StartCoroutine(Shot());
+    }
+
+    IEnumerator Shot()
+    {
+        yield return new WaitForSeconds(0.5f);
         var ar = Instantiate(arrow, transform.position + (Vector3)dir*1.5f, transform.rotation);
         ar.transform.SetParent(transform);
 

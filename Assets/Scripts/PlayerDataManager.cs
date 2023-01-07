@@ -19,6 +19,8 @@ public class PlayerDataManager : UnitySingleton<PlayerDataManager>
     [SerializeField] 
     public float suspicion;
     public float maxSuspicion;
+
+    public int eyeNum;
     
     public float[] skillLevels;
     public float[] skillCooldown;

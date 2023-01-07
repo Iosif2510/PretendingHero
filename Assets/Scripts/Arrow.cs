@@ -14,8 +14,6 @@ public class Arrow : MonoBehaviour
         this.speed = speed;
         this.dir = dir.normalized;
         this.damage = damage;
-        
-        Debug.Log(this.dir * this.speed + " " + this.speed);
 
         GetComponent<Rigidbody2D>().velocity = this.dir * this.speed;
     }
@@ -25,9 +23,12 @@ public class Arrow : MonoBehaviour
         if (col.transform.tag == "Monster" || col.transform.tag == "Player")
         {
             col.transform.GetComponent<Creature>().Hit(damage, dir.normalized, 1f);
+            if (col.gameObject.tag == "Player")
+            {
+                PlayerDataManager.Instance.suspicion += PlayerDataManager.Instance.eyeNum * 2;
+            }
         }
         
-        Debug.Log("!!!");
         Destroy(gameObject);
         
     }

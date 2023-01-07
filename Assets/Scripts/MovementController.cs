@@ -298,6 +298,7 @@ public class MovementController : MonoBehaviour, Creature
             SetCooldown(3);
             _removeTrap = false;
             _isAttacking = false;
+            PlayerDataManager.Instance.suspicion += 10 * PlayerDataManager.Instance.eyeNum;
         }
     }
     private IEnumerator Concentration()
