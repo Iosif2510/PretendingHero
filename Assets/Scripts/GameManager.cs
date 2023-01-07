@@ -47,6 +47,10 @@ public class GameManager : UnitySingleton<GameManager>
     {
         currentPhase = phase;
         Debug.Log(phase);
+        if (phase == DayPhase.Night)
+        {
+            SaveLoadManager.Instance.Save();
+        }
     }
 
     public void MovePhase() 
