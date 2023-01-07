@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a1af7e7-c516-4d4a-a212-ae12133d60bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonA.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonA.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonB.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonB.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonC.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonC.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonD.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonD.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonE.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minseo/OverallSystem_Minseo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minseo/OverallSystem_Minseo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MorningScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MorningScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SecretGarden.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SecretGarden.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer_UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timer_UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PrologueScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PrologueScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
