@@ -102,20 +102,6 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
         return File.Exists(filePath);
     }
 
-    public void NewGame()
-    {
-        if (CheckSaveFileExist())
-        {
-            Debug.Log("Warning : Are you sure you want to delete your data?");
-            deleteButton.SetActive(true);
-            deleteText.SetActive(true);
-        }
-        else
-        {
-            NewGameExe();
-        }
-    }
-
     public void NewGameExe()
     {
         mySaveData = new SaveData();

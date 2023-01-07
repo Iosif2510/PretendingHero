@@ -207,8 +207,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810975633}
-        m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
+      - m_Target: {fileID: 1130887203}
+        m_TargetAssemblyTypeName: StartScene, Assembly-CSharp
         m_MethodName: NewGameExe
         m_Mode: 1
         m_Arguments:
@@ -695,8 +695,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810975633}
-        m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
+      - m_Target: {fileID: 1130887203}
+        m_TargetAssemblyTypeName: StartScene, Assembly-CSharp
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
@@ -829,8 +829,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810975633}
-        m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
+      - m_Target: {fileID: 1130887203}
+        m_TargetAssemblyTypeName: StartScene, Assembly-CSharp
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
@@ -1094,6 +1094,7 @@ GameObject:
   - component: {fileID: 1130887201}
   - component: {fileID: 1130887200}
   - component: {fileID: 1130887199}
+  - component: {fileID: 1130887203}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1187,6 +1188,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1130887203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130887198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4636ee1448647598830f10d6f7534d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deleteButton: {fileID: 187126769}
+  deleteText: {fileID: 998429701}
 --- !u!1 &1472458203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1285,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1472458206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1130887203}
+        m_TargetAssemblyTypeName: StartScene, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1472458206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,7 +1513,7 @@ MonoBehaviour:
   level: 1
   skillPoint: 0
   suspicion: 0
-  maxSuspicion: 0
+  maxSuspicion: 100
   eyeNum: 0
   skillLevels: []
   skillCooldown: []
@@ -1535,6 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6bc16eed9f4438080eec396752e95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathReason: 0
 --- !u!4 &1810975632
 Transform:
   m_ObjectHideFlags: 0
