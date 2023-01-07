@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class TrapSpawn : MonoBehaviour
 {
+    public Transform[] spawnPoints;
+    public int trapNum;  //1개에 대해
+    public GameObject trapObject;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        spawnPoints = new Transform[trapNum];
+        int i = 0;
+        foreach (Transform child in transform)
+        {
+            spawnPoints[i++] = child;
+        }
+        for (int i=0; i<trapNum; i++)
+        {
+            Instantiate(trapObject, spawnPoints[i]);
+        }
     }
 }
