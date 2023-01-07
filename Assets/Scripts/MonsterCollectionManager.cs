@@ -1,3 +1,55 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:64d24fafdc78eeb2ce1ea6b7251bfa518382709697486e05041e86e20268eea7
-size 1289
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MonsterCollectionManager : UnitySingleton<MonsterCollectionManager>
+{
+    public static int monsterNumber = 20;
+
+    [SerializeField]
+    private List<MonsterData> collectableMonsters;
+
+    // number of each collected monster
+    private Dictionary<MonsterData, int> collectedMonsters;
+
+    public List<MonsterData> CollectableMonsters
+    {
+        get 
+        {
+            return collectableMonsters;
+        }
+    }
+
+    public Dictionary<MonsterData, int> CollectedMonsters
+    {
+        get 
+        {
+            return collectedMonsters;
+        }
+    }
+
+    private void Awake() 
+    {
+        collectedMonsters = new Dictionary<MonsterData, int>();
+        foreach (var monster in collectableMonsters)
+        {
+            collectedMonsters.Add(monster, 0);
+        }
+        // collectedMonsters[collectableMonsters[0]] = 3;
+    }
+
+    public void CollectMonster(MonsterData monster, int number)
+    {
+        collectedMonsters[monster] = number;
+    }
+
+    public void CollectMonster(MonsterData monster)
+    {
+        collectedMonsters[monster]++;
+    }
+
+    public int GetMonsterNumberByIndex(int index)
+    {
+        return collectedMonsters[collectableMonsters[index]];
+    }
+}

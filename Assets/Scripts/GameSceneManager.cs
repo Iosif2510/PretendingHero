@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:050dab76b01ec0c9ac754aab4cfc9cb521e4ba9d7c3a39228625c0260b4735df
-size 505
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using static Define;
+
+public class GameSceneManager : UnitySingleton<GameSceneManager>
+{
+    [SerializeField]
+    private List<string> stageScenes;
+
+    public void LoadStage(MapStage stage) 
+    {
+        string sceneName = stageScenes[(int)stage];
+        SceneManager.LoadScene(sceneName);
+    }
+
+    // public void LoadStage(int stage) {
+    //     LoadStage((MapStage)stage);
+    // }
+}

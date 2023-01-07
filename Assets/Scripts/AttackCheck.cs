@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1aa89459ca2d35c9e68ddbf8d47d172cc1ab95bb6799072dfc37b6d85df9839a
-size 408
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AttackCheck : MonoBehaviour
+{
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Monster")
+        {
+            col.GetComponent<Creature>().Hit(10, 
+                (Vector2) (col.transform.position -transform.position).normalized,
+                1);
+        }
+    }
+}
