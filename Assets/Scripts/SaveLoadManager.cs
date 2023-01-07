@@ -86,11 +86,10 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
             string loadedString = File.ReadAllText(filePath);
             mySaveData = JsonConvert.DeserializeObject<SaveData>(loadedString);
             Debug.Log("Data Loaded.");
+            LoadDataSync();
             return true;
         }
         else return false;
-        
-        LoadDataSync();
     }
 
     public bool CheckSaveFileExist()
