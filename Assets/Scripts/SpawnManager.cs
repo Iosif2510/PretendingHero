@@ -9,10 +9,9 @@ public class SpawnManager : MonoBehaviour
     public float createTime = 3f;
     //public float curtime; 
 
-
     //찍어낼 게임 오브젝트
     public List<GameObject> monster = new List<GameObject>();
-
+    public GameObject bossmonster;
 
     void Start()
     {
@@ -26,7 +25,7 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < spawnPoints.Length; i++)
+            for (int i = 0; i < spawnPoints.Length-1; i++)
             {
                 int j = Random.Range(0, monster.Count);
                 Instantiate(monster[j], spawnPoints[i]);
@@ -37,4 +36,11 @@ public class SpawnManager : MonoBehaviour
         yield return null;
         
     }
+
+    public void createBoss()
+    {
+        //bossmonster.gameObject.SetActive(true);
+        Instantiate(bossmonster, spawnPoints[spawnPoints.Length-1]);
+    }
+
 }

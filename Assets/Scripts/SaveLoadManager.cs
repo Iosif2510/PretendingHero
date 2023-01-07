@@ -78,7 +78,7 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
         Debug.Log("Data Saved.");
     }
 
-    public void Load()
+    public bool Load()
     {
         string filePath = $"{Application.persistentDataPath}/{saveDataName}";
         if (File.Exists(filePath))
@@ -86,9 +86,16 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
             string loadedString = File.ReadAllText(filePath);
             mySaveData = JsonConvert.DeserializeObject<SaveData>(loadedString);
             Debug.Log("Data Loaded.");
+            LoadDataSync();
+            return true;
         }
-        
-        LoadDataSync();
+        else return false;
+    }
+
+    public bool CheckSaveFileExist()
+    {
+        string filePath = $"{Application.persistentDataPath}/{saveDataName}";
+        return File.Exists(filePath);
     }
 
     public void NewGame()
@@ -99,7 +106,6 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 
     public void LoadGame()
     {
-        Load();
-        GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
+        if (Load()) GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
     }
 }
