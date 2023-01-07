@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 using static Define;
 
 public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 {
     private SaveData mySaveData;
     private string saveDataName = "SaveData.json";
+    [SerializeField] private GameObject deleteButton;
+    [SerializeField] private GameObject deleteText;
 
     private void Awake()
     {
@@ -78,28 +81,36 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
         Debug.Log("Data Saved.");
     }
 
-    public void Load()
+    public bool Load()
     {
-        string filePath = $"{Application.persistentDataPath}/{saveDataName}";
-        if (File.Exists(filePath))
+        if (!CheckSaveFileExist())
         {
-            string loadedString = File.ReadAllText(filePath);
-            mySaveData = JsonConvert.DeserializeObject<SaveData>(loadedString);
-            Debug.Log("Data Loaded.");
+            Debug.Log("Data Absent.");
+            return false;
         }
-        
+        string filePath = $"{Application.persistentDataPath}/{saveDataName}";
+        string loadedString = File.ReadAllText(filePath);
+        mySaveData = JsonConvert.DeserializeObject<SaveData>(loadedString);
+        Debug.Log("Data Loaded.");
         LoadDataSync();
+        return true;
     }
 
-    public void NewGame()
+    public bool CheckSaveFileExist()
+    {
+        string filePath = $"{Application.persistentDataPath}/{saveDataName}";
+        return File.Exists(filePath);
+    }
+
+    public void NewGameExe()
     {
         mySaveData = new SaveData();
         GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
+        SceneManager.LoadScene("PrologueScene");
     }
 
     public void LoadGame()
     {
-        Load();
-        GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
+        if (Load()) GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
     }
 }

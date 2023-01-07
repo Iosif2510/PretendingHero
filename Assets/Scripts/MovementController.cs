@@ -15,6 +15,8 @@ public class MovementController : MonoBehaviour, Creature
     public float exp {get => PlayerDataManager.Instance.exp; set => PlayerDataManager.Instance.exp = value;}
     public float maxExp {get => PlayerDataManager.Instance.maxExp; set => PlayerDataManager.Instance.maxExp = value;}
     public int level {get => PlayerDataManager.Instance.level; set => PlayerDataManager.Instance.level = value;}
+    public float suspicion {get => PlayerDataManager.Instance.suspicion; set => PlayerDataManager.Instance.suspicion = value;}
+    public float maxSuspicion {get => PlayerDataManager.Instance.maxSuspicion; set => PlayerDataManager.Instance.maxSuspicion = value;}
 
     public int skillPoint {get => PlayerDataManager.Instance.skillPoint; set => PlayerDataManager.Instance.skillPoint = value;}
     
@@ -69,7 +71,15 @@ public class MovementController : MonoBehaviour, Creature
         hp = Mathf.Clamp(hp, 0, maxHp);
         exp = Mathf.Clamp(exp, 0, maxExp);
 
-        if (hp <= 0) return;
+        if (hp <= 0)
+        {
+            GameManager.Instance.GameOver(Define.Death.NoHealth);
+        }
+
+        if (suspicion >= maxSuspicion)
+        {
+            GameManager.Instance.GameOver(Define.Death.Suspicion);
+        }
 
         if (exp >= maxExp)
         {
@@ -298,6 +308,7 @@ public class MovementController : MonoBehaviour, Creature
             SetCooldown(3);
             _removeTrap = false;
             _isAttacking = false;
+            PlayerDataManager.Instance.suspicion += 10 * PlayerDataManager.Instance.eyeNum;
         }
     }
     private IEnumerator Concentration()

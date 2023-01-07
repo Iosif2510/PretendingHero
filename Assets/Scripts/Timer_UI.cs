@@ -54,7 +54,7 @@ public class Timer_UI : MonoBehaviour
             else
             {
                 GameManager.Instance.DungeonUnlockNumber += 1;
-                GameSceneManager.Instance.LoadStage((MapStage)1);
+                GameSceneManager.Instance.LoadStage((MapStage)0);
             }
             
         }

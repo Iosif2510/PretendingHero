@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Define;
 
 public class GameManager : UnitySingleton<GameManager>
@@ -8,6 +9,7 @@ public class GameManager : UnitySingleton<GameManager>
     private DayPhase currentPhase;
     private int dayNum;
     private int dungeonUnlockNumber;  // number of unlocked dungeon
+    public Death deathReason;
 
     public int DungeonUnlockNumber
     {
@@ -20,6 +22,7 @@ public class GameManager : UnitySingleton<GameManager>
     // Start is called before the first frame update
     void Awake()
     {
+        deathReason = Death.DidntDie;
         dayNum = 1;
         dungeonUnlockNumber = 1;
         // UIManager.Instance.UpdateDay();
@@ -47,6 +50,10 @@ public class GameManager : UnitySingleton<GameManager>
     {
         currentPhase = phase;
         Debug.Log(phase);
+        if (phase == DayPhase.Night)
+        {
+            SaveLoadManager.Instance.Save();
+        }
     }
 
     public void MovePhase() 
@@ -54,5 +61,11 @@ public class GameManager : UnitySingleton<GameManager>
         DayPhase phase = (DayPhase)(((int)currentPhase + 1) % 4);
         MovePhase(phase);
         // Debug.Log(phase);
+    }
+
+    public void GameOver(Death death)
+    {
+        deathReason = death;
+        SceneManager.LoadScene("GameOverScene");
     }
 }
