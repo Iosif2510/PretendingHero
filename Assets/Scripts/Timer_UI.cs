@@ -21,14 +21,14 @@ public class Timer_UI : MonoBehaviour
     void Update()
     {
         LimitTime -= Time.deltaTime;
-        timer.text = "Remain Time : " + Mathf.Round(LimitTime);
+        timer.text = $"Remain Time\n{Mathf.Round(LimitTime)}";
 
         if(LimitTime <= 0)
         {
             Debug.Log("제한 시간 끝!");
             GameManager.Instance.MovePhase();
             // Debug.Log(GameManager.Instance.CurrentPhase);
-            GameSceneManager.Instance.LoadStage((MapStage)7);
+            GameSceneManager.Instance.LoadStage((MapStage)0);
         }
     }
 

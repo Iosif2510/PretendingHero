@@ -6,6 +6,8 @@ public class SecretGardenManager : MonoBehaviour
 {
     [SerializeField]
     private Transform monsterPlaceParent;
+    [SerializeField]
+    private Transform monstersParent;
 
     private int currentPage;
     private int gardenPlaceNumber = 20;
@@ -35,6 +37,10 @@ public class SecretGardenManager : MonoBehaviour
                 {
                     monsterPlace.gameObject.SetActive(true);
                     monsterPlace.SetPlace(MonsterCollectionManager.Instance.CollectableMonsters[monsterIndex]);
+                    if (monstersParent.childCount > monsterIndex)
+                    {
+                        monstersParent.GetChild(monsterIndex).gameObject.SetActive(true);
+                    }
                 }
                 else
                 {
