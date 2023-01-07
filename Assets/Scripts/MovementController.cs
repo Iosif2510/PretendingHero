@@ -15,8 +15,8 @@ public class MovementController : MonoBehaviour, Creature
     public float exp {get => PlayerDataManager.Instance.exp; set => PlayerDataManager.Instance.exp = value;}
     public float maxExp {get => PlayerDataManager.Instance.maxExp; set => PlayerDataManager.Instance.maxExp = value;}
     public int level {get => PlayerDataManager.Instance.level; set => PlayerDataManager.Instance.level = value;}
-    public int suspicion {get => PlayerDataManager.Instance.suspicion; set => PlayerDataManager.Instance.suspicion = value;}
-    public int maxSuspicion {get => PlayerDataManager.Instance.maxSuspicion; set => PlayerDataManager.Instance.maxSuspicion = value;}
+    public float suspicion {get => PlayerDataManager.Instance.suspicion; set => PlayerDataManager.Instance.suspicion = value;}
+    public float maxSuspicion {get => PlayerDataManager.Instance.maxSuspicion; set => PlayerDataManager.Instance.maxSuspicion = value;}
 
     public int skillPoint {get => PlayerDataManager.Instance.skillPoint; set => PlayerDataManager.Instance.skillPoint = value;}
     
@@ -73,12 +73,12 @@ public class MovementController : MonoBehaviour, Creature
 
         if (hp <= 0)
         {
-            GameManager.Instance.GameOver(Define.NoHealth);
+            GameManager.Instance.GameOver(Define.Death.NoHealth);
         }
 
         if (suspicion >= maxSuspicion)
         {
-            GameManager.Instance.GameOver(Define.Suspicion);
+            GameManager.Instance.GameOver(Define.Death.Suspicion);
         }
 
         if (exp >= maxExp)

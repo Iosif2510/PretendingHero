@@ -26,13 +26,13 @@ public class ToMain : MonoBehaviour
                 deathReason.text = "You Never Died.\nThis must be an Error.";
                 break;
             case Death.NoHealth:
-                deathReason.text = "You Died Due to Low Health.\nRest in Monsters."
+                deathReason.text = "You Died Due to Low Health.\nRest in Monsters.";
                 break;
             case Death.Suspicion:
-                deathReason.text = "You are Banished Due to Others' Suspicion.\nFarewell, Society!."
+                deathReason.text = "You are Banished Due to Others' Suspicion.\nFarewell, Society!.";
                 break;
-            case Death.NoHealth:
-                deathReason.text = "You Failed to Protect Unique Monster.\nYou Had One Job."
+            case Death.UniqueDead:
+                deathReason.text = "You Failed to Protect Unique Monster.\nYou Had One Job.";
                 break;
         }
             
