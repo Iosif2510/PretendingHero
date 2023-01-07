@@ -18,7 +18,7 @@ public class GameManager : UnitySingleton<GameManager>
     public DayPhase CurrentPhase { get { return currentPhase; }}
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dayNum = 1;
         dungeonUnlockNumber = 1;

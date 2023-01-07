@@ -7,6 +7,8 @@ public class Potal : MonoBehaviour, Interactable
 {
     [SerializeField] private int stage;
     [SerializeField] private bool dayPhaseShift;
+    private bool to_next = false;
+
     
     public void Interact()
     {
