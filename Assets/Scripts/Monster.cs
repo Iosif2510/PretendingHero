@@ -18,10 +18,6 @@ public class Monster : MonoBehaviour, Creature, Interactable
 
     public Vector2 boxOffset;
     public Vector2 attackBoundary;
-    
-    public delegate void HitDelegate(float hp, float maxHp);
-
-    public event HitDelegate HitEvent;
 
     Rigidbody2D monster;
 
@@ -58,7 +54,7 @@ public class Monster : MonoBehaviour, Creature, Interactable
     //충돌 콜라이더
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (_isAttack && collision.collider.CompareTag("Player")) 
+        if (_isAttack && ( collision.collider.CompareTag("Player") ||  collision.collider.CompareTag("NPC"))) 
             collision.collider.GetComponent<Creature>().Hit(data._power, 
                 (Vector2) (collision.collider.transform.position - transform.position).normalized,
                 0.5f);
@@ -129,6 +125,13 @@ public class Monster : MonoBehaviour, Creature, Interactable
                             _attackTime = data._attackDelay;
                             return;
                         }
+                        if (i.tag == "NPC")
+                        {
+                            monster.velocity = Vector2.zero;
+                            StartCoroutine(Attack());
+                            _attackTime = data._attackDelay;
+                            return;
+                        }
                     }
                 }
 
@@ -192,7 +195,7 @@ public class Monster : MonoBehaviour, Creature, Interactable
         Color color = _sprite.color;
         for (int i = 0; i < 10; i++)
         {
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.04f);
             if (i%2 == 0) _sprite.color -= new Color(0, 0, 0, 1);
             else _sprite.color += new Color(0, 0, 0, 1);
         }
@@ -209,7 +212,7 @@ public class Monster : MonoBehaviour, Creature, Interactable
 
         foreach (var i in collider2Ds)
         {
-            if (i.tag == "Player")
+            if (i.tag == "Player" || i.tag == "NPC")
             {
                 Transform pos = i.transform;
                 monster.velocity = (pos.position - transform.position).normalized * data._speed * 1.3f;
