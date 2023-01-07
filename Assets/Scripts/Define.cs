@@ -24,4 +24,12 @@ public class Define
         BossBattleScene = 7,
         GameOverScene = 8,
     }
+
+    public enum Death
+    {
+        DidntDie,
+        NoHealth,
+        Suspicion,
+        UniqueDead
+    }
 }

@@ -189,6 +189,10 @@ public class Monster : MonoBehaviour, Creature, Interactable
     }
     public void Die()
     {
+        if (data._rareNess == 3)
+        {
+            GameManager.Instance.GameOver(Define.Death.UniqueDead);
+        }
         Destroy(gameObject, 1f);
     }
 
