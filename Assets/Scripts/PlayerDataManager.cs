@@ -27,7 +27,17 @@ public class PlayerDataManager : UnitySingleton<PlayerDataManager>
 
     private void Awake()
     {
+        /*
+        * 0 : Dash
+        * 1 : Rescue -> interaction 
+        * 2 : Guard
+        * 3 : RemoveTrap -> interaction
+        * 4 : Concentration
+        * 5 : Transparent
+        */
         skillLevels = new float[skillInfos.skillCooldown.Length];
+        skillLevels[1] = 1;
+        skillLevels[3] = 1;
         skillCooldown = new float[skillInfos.skillCooldown.Length];
     }
 }
