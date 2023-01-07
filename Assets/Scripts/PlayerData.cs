@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46aed04c7722302ab42d1927d43d2134cfb46ff2fbb5ef6ac88fe6df4dbc7d12
-size 313
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/PlayerData", order = 1)]
+public class PlayerData : CharacterData
+{
+    public int _exp;
+    public int _skillPoint;
+    public int _suspicionBound;
+}

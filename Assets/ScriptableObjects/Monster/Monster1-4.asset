@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a2c94ad08a44efbf21a93c0a7a228fe1261261bcf4acf1f3a9b24ed1a19773b
-size 622
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6798cb360a9f4570b12f890c3435a17, type: 3}
+  m_Name: Monster1-4
+  m_EditorClassIdentifier: 
+  _name: 
+  _level: 3
+  _power: 20
+  _defense: 5
+  _health: 50
+  _speed: 3
+  _attackDelay: 1
+  _powerUp: 0
+  _defenseUp: 0
+  _healthUp: 0
+  _rareNess: 3
+  _respawnTimeBound: 0
+  _expGiven: 100
+  _probabilityOfOccurrence: 0

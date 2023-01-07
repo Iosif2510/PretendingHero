@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7631c2851898abea7564473ce8b37d8d06c962c189c0bbfa62c5e37c975a0134
-size 599
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833a3726c63564536aee0afd105d6be2, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  _name: pret
+  _level: 1
+  _power: 10
+  _defense: 10
+  _health: 100
+  _speed: 10
+  _attackDelay: 0.3
+  _powerUp: 2
+  _defenseUp: 2
+  _healthUp: 20
+  _exp: 100
+  _skillPoint: 3
+  _suspicionBound: 100

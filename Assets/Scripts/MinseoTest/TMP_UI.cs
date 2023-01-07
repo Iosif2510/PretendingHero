@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d4e54e4bce2ceb2bc2a277af4eca141d82848a2d76f49a35f02750db3ab7492
-size 1010
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class TMP_UI : MonoBehaviour
+{
+    [SerializeField] private TMP_Text level;
+    [SerializeField] private TMP_Text skillPoint;
+    [SerializeField] private Slider hp;
+    [SerializeField] private Slider exp;
+    [SerializeField] private MovementController player;
+
+    public float rate;
+
+    private void Update()
+    {
+        level.text = "Level " + player.level;
+        skillPoint.text = "Skill Point :\n" + player.skillPoint;
+        hp.value = Mathf.Lerp(hp.value, player.hp / player.maxHp, rate*Time.deltaTime);
+        exp.value = Mathf.Lerp(exp.value, player.exp / player.maxExp, rate*Time.deltaTime);
+    }
+
+    public void ChangeHp(float value)
+    {
+        player.hp += value;
+    }
+    
+    public void ChangeExp(float value)
+    {
+        player.exp += value;
+    }
+
+    public void AddSkillLevel(int index)
+    {
+        player.AddSkillLevel(index);
+    }
+}

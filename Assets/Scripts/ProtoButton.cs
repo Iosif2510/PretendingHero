@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:217c7a4cd04ae69bf3add0fd80652aa30a7e6af40d48ea6ab9a85bc248e318c6
-size 457
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using static Define;
+
+public class ProtoButton : MonoBehaviour
+{
+    public void LoadScene(int stage) 
+    {
+        GameManager.Instance.MovePhase();
+        // Debug.Log(GameManager.Instance.CurrentPhase);
+        GameSceneManager.Instance.LoadStage((MapStage)stage);
+    }
+
+    public void NextDay()
+    {
+        GameManager.Instance.NextDay();
+    }
+}

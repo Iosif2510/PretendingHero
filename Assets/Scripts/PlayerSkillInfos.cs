@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b9e7d460300f3fc0d1c043069ef6db1d8d11e27df4d15cfebb197b3871031d8
-size 533
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerSkillInfo", order = 1)]
+public class PlayerSkillInfos : ScriptableObject
+{
+    public float[] skillCooldown;
+    /*
+     * 0 : Dash
+     * 1 : Rescue -> interaction 
+     * 2 : Guard
+     * 3 : RemoveTrap -> interaction
+     * 4 : Concentration
+     * 5 : Transparent
+     */
+    public float[] cooldownDecrement;
+    public float[] abilityIncrement;
+    public float[] maxLevel;
+}

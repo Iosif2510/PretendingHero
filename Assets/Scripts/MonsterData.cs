@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1c4832f43b1d9edf0177c4c1014f15f9cb15c567fd76c6b1b7ae8d5723a8d17
-size 367
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "MonsterData", menuName = "ScriptableObjects/MonsterData", order = 1)]
+public class MonsterData : CharacterData
+{
+    public int _rareNess;
+    public int _respawnTimeBound;
+    public int _expGiven;
+    public float _probabilityOfOccurrence;
+}

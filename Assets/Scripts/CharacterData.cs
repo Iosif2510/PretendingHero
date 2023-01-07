@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:275e8fc346c2daa8118abc709977cba969cce91888c9d1b48949ea8f35f8c712
-size 423
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class CharacterData : ScriptableObject
+{
+    public string _name;
+    public int _level;
+    public int _power;
+    public int _defense;
+    public int _health;
+    public int _speed;
+    public float _attackDelay;
+    public int _powerUp;
+    public int _defenseUp;
+    public int _healthUp;
+}

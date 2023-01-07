@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff3effd1098a27d7e5a1c6f477e23ddb26ae7577537c86f0e6e45b0706d12e19
-size 303
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class YZMatcher : MonoBehaviour
+{
+    [SerializeField] private Transform pivot;
+    void Update()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, pivot.position.y);
+    }
+}
