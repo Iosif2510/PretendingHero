@@ -12,6 +12,7 @@ TagManager:
   - Monster
   - NPC
   - Obstacle
+  - Trap
   layers:
   - Default
   - TransparentFX
