@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
+  - Left
+  - Up
+  - Right
+  - Down
+  - Monster
+  - NPC
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -12,7 +19,7 @@ TagManager:
   - Object
   - Water
   - UI
-  - 
+  - Monster
   - 
   - 
   - 
