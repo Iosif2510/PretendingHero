@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SecretGarden.unity
     guid: f0648ab0212dd4a9db8f8eeed063a8f6
   - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 12964746647b94c90828538b66f885b9
+  - enabled: 1
     path: Assets/Scenes/Minseo/GameOverScene.unity
     guid: 0ecc08a1c2fbb4ea69f597288b958b7a
   - enabled: 1
