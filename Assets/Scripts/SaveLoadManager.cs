@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 using static Define;
 
 public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 {
     private SaveData mySaveData;
     private string saveDataName = "SaveData.json";
+    [SerializeField] private GameObject deleteButton;
+    [SerializeField] private GameObject deleteText;
 
     private void Awake()
     {
@@ -80,16 +83,17 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 
     public bool Load()
     {
-        string filePath = $"{Application.persistentDataPath}/{saveDataName}";
-        if (File.Exists(filePath))
+        if (!CheckSaveFileExist())
         {
-            string loadedString = File.ReadAllText(filePath);
-            mySaveData = JsonConvert.DeserializeObject<SaveData>(loadedString);
-            Debug.Log("Data Loaded.");
-            LoadDataSync();
-            return true;
+            Debug.Log("Data Absent.");
+            return false;
         }
-        else return false;
+        string filePath = $"{Application.persistentDataPath}/{saveDataName}";
+        string loadedString = File.ReadAllText(filePath);
+        mySaveData = JsonConvert.DeserializeObject<SaveData>(loadedString);
+        Debug.Log("Data Loaded.");
+        LoadDataSync();
+        return true;
     }
 
     public bool CheckSaveFileExist()
@@ -100,8 +104,23 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 
     public void NewGame()
     {
+        if (CheckSaveFileExist())
+        {
+            Debug.Log("Warning : Are you sure you want to delete your data?");
+            deleteButton.SetActive(true);
+            deleteText.SetActive(true);
+        }
+        else
+        {
+            NewGameExe();
+        }
+    }
+
+    public void NewGameExe()
+    {
         mySaveData = new SaveData();
         GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
+        SceneManager.LoadScene("PrologueScene");
     }
 
     public void LoadGame()
