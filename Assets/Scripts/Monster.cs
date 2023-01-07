@@ -95,10 +95,17 @@ public class Monster : MonoBehaviour, Creature, Interactable
             Debug.Log("속도값" + monster.velocity);
         } else if (collision.collider.CompareTag("Trap"))
         {
-            Destroy(collision.gameObject);
+            collision.collider.GetComponent<Animator>().SetTrigger("TrapActivate");
+            StartCoroutine(DestroyTrap(collision.gameObject));
             StartCoroutine(Trapped());
             trapped = true;
         }
+    }
+
+    private IEnumerator DestroyTrap(GameObject trap)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(trap);
     }
 
 
