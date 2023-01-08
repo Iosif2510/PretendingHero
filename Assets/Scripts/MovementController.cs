@@ -358,7 +358,15 @@ public class MovementController : MonoBehaviour, Creature
     public void Hit(float damage, Vector2 knockback, float backTime)
     {
         if (_invincibilityTime > 0) return;
-        hp -= (int) damage;
+        if (_guard)
+        {
+            hp -= (int)(damage * (1 - (10 + SkillLevels[2] * skillInfos.abilityIncrement[2])/100));
+        }
+        else
+        {
+            hp -= (int) damage;
+        }
+        
         _rigidbody.velocity = knockback;
         _knockbackTime = backTime;
         _invincibilityTime = 1f;
