@@ -9,6 +9,17 @@ public class GameSceneManager : UnitySingleton<GameSceneManager>
     [SerializeField]
     private List<string> stageScenes;
 
+    private void Start()
+    {
+        SceneManager.sceneLoaded += (Scene s, LoadSceneMode m) =>
+        {
+            if (GameManager.Instance.CurrentPhase == DayPhase.Night)
+            {
+                SaveLoadManager.Instance.Save();
+            }
+        };
+    }
+
     public void LoadStage(MapStage stage) 
     {
         string sceneName = stageScenes[(int)stage];
