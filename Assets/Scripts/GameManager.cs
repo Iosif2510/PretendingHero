@@ -22,9 +22,11 @@ public class GameManager : UnitySingleton<GameManager>
     // Start is called before the first frame update
     void Awake()
     {
+        base.Awake();
         deathReason = Death.DidntDie;
         dayNum = 1;
         dungeonUnlockNumber = 1;
+        Screen.SetResolution(1920, 1080, true);
         // UIManager.Instance.UpdateDay();
     }
 
@@ -63,6 +65,7 @@ public class GameManager : UnitySingleton<GameManager>
     public void GameOver(Death death)
     {
         deathReason = death;
+        PlayerDataManager.Instance.Reset();
         SceneManager.LoadScene("GameOverScene");
     }
 }

@@ -30,6 +30,29 @@ public class PlayerDataManager : UnitySingleton<PlayerDataManager>
     public float[] skillLevels;
     public float[] skillCooldown;
 
+    public void Reset()
+    {
+        level = 1;
+        maxHp = 100;
+        hp = maxHp;
+        exp = 0;
+        maxExp = 50;
+        skillPoint = 2;
+        power = 10;
+        defense = 10;
+        suspicion = 0;
+        maxSuspicion = 100;
+        eyeNum = 0;
+        
+        skillLevels = new float[skillInfos.skillCooldown.Length];
+        skillLevels[1] = 1;
+        skillLevels[3] = 1;
+        skillCooldown = new float[skillInfos.skillCooldown.Length];
+        
+        npcData1._level = 1;
+        npcData2._level = 1;
+    }
+
     private void Awake()
     {
         /*
@@ -40,9 +63,6 @@ public class PlayerDataManager : UnitySingleton<PlayerDataManager>
         * 4 : Concentration
         * 5 : Transparent
         */
-        skillLevels = new float[skillInfos.skillCooldown.Length];
-        skillLevels[1] = 1;
-        skillLevels[3] = 1;
-        skillCooldown = new float[skillInfos.skillCooldown.Length];
+        Reset();
     }
 }

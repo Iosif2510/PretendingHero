@@ -22,7 +22,7 @@ public class UnitySingleton<T> : MonoBehaviour where T : MonoBehaviour
             return instance;
         }
     }
-    private void Awake()
+    protected void Awake()
     {
         var objs = FindObjectsOfType<UnitySingleton<T>>();
         if (objs.Length != 1) 
