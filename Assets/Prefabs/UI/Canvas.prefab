@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fed978a109d47f8a59003006e1634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIconSprite: {fileID: 21300012, guid: 59f03265ad886fa4ba24d2a403aefe12, type: 3}
+  skillIconSprite: {fileID: 21300000, guid: 3ac6cda60e94d6c4e853d658f94c3691, type: 3}
   skillIcon: {fileID: 6927955454511249511}
   coolArea: {fileID: 6927955454900047808}
   key: W
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fed978a109d47f8a59003006e1634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIconSprite: {fileID: 21300000, guid: 460d20c957d56964b9aaf3458cb2bb92, type: 3}
+  skillIconSprite: {fileID: 21300000, guid: 6a110638cb9aaf4488c063fe41c3d764, type: 3}
   skillIcon: {fileID: 6927955454961126024}
   coolArea: {fileID: 6927955453744148491}
   key: P
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300002, guid: 460d20c957d56964b9aaf3458cb2bb92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ec345dcd7a151443ae8650195ff9113, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fed978a109d47f8a59003006e1634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIconSprite: {fileID: 21300022, guid: 2b3d3c13c40bf3e40b3606df121530e1, type: 3}
+  skillIconSprite: {fileID: 21300000, guid: b8a031e9f6c265546a22d0fad646b421, type: 3}
   skillIcon: {fileID: 6927955454913070393}
   coolArea: {fileID: 6927955453960354386}
   key: E
@@ -4055,7 +4055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fed978a109d47f8a59003006e1634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIconSprite: {fileID: 21300000, guid: 460d20c957d56964b9aaf3458cb2bb92, type: 3}
+  skillIconSprite: {fileID: 21300000, guid: 5820fde25ad44dc49bfb31e9339f0128, type: 3}
   skillIcon: {fileID: 6927955455728729496}
   coolArea: {fileID: 6927955454561072046}
   key: P
@@ -4689,7 +4689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fed978a109d47f8a59003006e1634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIconSprite: {fileID: 21300000, guid: 460d20c957d56964b9aaf3458cb2bb92, type: 3}
+  skillIconSprite: {fileID: 21300000, guid: 154337fc2d6c0bd468f747e9bfdc02a2, type: 3}
   skillIcon: {fileID: 6927955454092911279}
   coolArea: {fileID: 6927955454927309664}
   key: Q
@@ -4920,7 +4920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fed978a109d47f8a59003006e1634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillIconSprite: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
+  skillIconSprite: {fileID: 21300000, guid: 31bff5f51abbe194686c020b5faae656, type: 3}
   skillIcon: {fileID: 6927955455485576212}
   coolArea: {fileID: 6927955454560206915}
   key: R
