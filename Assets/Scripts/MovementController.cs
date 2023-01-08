@@ -87,7 +87,7 @@ public class MovementController : MonoBehaviour, Creature
         if (exp >= maxExp)
         {
             exp = 0;
-            level++;
+            LevelUp();
             skillPoint += 2;
         }
         
