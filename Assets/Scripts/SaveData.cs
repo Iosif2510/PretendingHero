@@ -24,14 +24,14 @@ public class SaveData
     public int dungeonUnlockNumber;
 
     //Monster Collection
-    public List<int> collectedMonstersList;
+    public int[] collectedMonstersList;
 
     public SaveData()
     {
-        collectedMonstersList = new List<int>();
+        collectedMonstersList = new int[MonsterCollectionManager.monsterNumber];
         for (int i = 0; i < MonsterCollectionManager.monsterNumber; i++)
         {
-            collectedMonstersList.Add(0);
+            collectedMonstersList[i] = 0;
         }
     }
 
