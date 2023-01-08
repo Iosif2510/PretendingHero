@@ -13,6 +13,7 @@ TagManager:
   - NPC
   - Obstacle
   - Trap
+  - Boundary
   layers:
   - Default
   - TransparentFX
