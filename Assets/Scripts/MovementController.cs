@@ -238,12 +238,18 @@ public class MovementController : MonoBehaviour, Creature
                     } else if (mon.currentHealth <= mon.data._health * 0.2f )
                     {
                         SetCooldown(1);
-                        MonsterCollectionManager.Instance.CollectMonster(mon.data);
+                        CollectMonster(mon.data);
                         Destroy(mon.gameObject);
                     }
                 }
             }
         }
+    }
+
+    private void CollectMonster(MonsterData monster)
+    {
+        exp += monster._expGiven;
+        MonsterCollectionManager.Instance.CollectMonster(monster);
     }
 
     // AfterImage Effect
@@ -303,7 +309,7 @@ public class MovementController : MonoBehaviour, Creature
 
         if (_removeTrap)
         {
-            MonsterCollectionManager.Instance.CollectMonster(monster.data);
+            CollectMonster(monster.data);
             Destroy(monster.gameObject);
             SetCooldown(3);
             _removeTrap = false;
