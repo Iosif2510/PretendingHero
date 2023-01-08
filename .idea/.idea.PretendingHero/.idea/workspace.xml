@@ -6,11 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="6a1af7e7-c516-4d4a-a212-ae12133d60bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PretendingHero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/bigDemon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/bigDemon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/bigZombie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/bigZombie.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/lizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/lizard.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/skelet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonB/skelet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/Bee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/Bee.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/Radish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/Radish.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/RedPig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/RedPig.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/Rino.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonC/Rino.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameOverScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameOverScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PrologueScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PrologueScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Skull.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Skull.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Slime.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Slime.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Snail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonD/Snail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Bird.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Bird.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Chicken.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Chicken.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Rock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Turtle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/DungeonE/Turtle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Objects/TrapProto.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Objects/TrapProto.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonA.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonA.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonB.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonB.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonC.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonC.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonD.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonD.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonE.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameSceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveLoadManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer_UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timer_UI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
@@ -110,8 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673102873327</updated>
-      <workItem from="1673102885407" duration="12323000" />
-      <workItem from="1673137220482" duration="2365000" />
+      <workItem from="1673102885407" duration="20206000" />
     </task>
     <servers />
   </component>

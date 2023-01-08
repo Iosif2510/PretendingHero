@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _level: 4
-  _power: 18
+  _power: 20
   _defense: 7
   _health: 40
   _speed: 5

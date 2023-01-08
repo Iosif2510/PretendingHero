@@ -18,6 +18,9 @@ public class MovementController : MonoBehaviour, Creature
     public float suspicion {get => PlayerDataManager.Instance.suspicion; set => PlayerDataManager.Instance.suspicion = value;}
     public float maxSuspicion {get => PlayerDataManager.Instance.maxSuspicion; set => PlayerDataManager.Instance.maxSuspicion = value;}
 
+    public int power {get => PlayerDataManager.Instance.power; set => PlayerDataManager.Instance.power = value;}
+    public int defense {get => PlayerDataManager.Instance.defense; set => PlayerDataManager.Instance.defense = value;}
+
     public int skillPoint {get => PlayerDataManager.Instance.skillPoint; set => PlayerDataManager.Instance.skillPoint = value;}
     
     public float[] SkillLevels {get => PlayerDataManager.Instance.skillLevels; set => PlayerDataManager.Instance.skillLevels = value;}
@@ -84,7 +87,7 @@ public class MovementController : MonoBehaviour, Creature
         if (exp >= maxExp)
         {
             exp = 0;
-            level++;
+            LevelUp();
             skillPoint += 2;
         }
         
@@ -199,6 +202,17 @@ public class MovementController : MonoBehaviour, Creature
         }
     }
 
+    private void LevelUp()
+    {
+        level++;
+        maxExp += 100;
+        maxHp += 20;
+        power += 2;
+        defense += 2;
+        PlayerDataManager.Instance.npcData1._level++;
+        PlayerDataManager.Instance.npcData2._level++;
+    }
+
     private void SetCooldown(int index)
     {
         SkillCooldown[index] = GetCooldown(index);
@@ -235,7 +249,7 @@ public class MovementController : MonoBehaviour, Creature
                     if (mon.trapped && SkillCooldown[3] <= 0 && SkillLevels[3] > 0)
                     {
                         StartCoroutine(RemoveTrap(mon));
-                    } else if (mon.currentHealth <= mon.data._health * 0.2f )
+                    } else if (mon.currentHealth <= mon.data._health * 0.2f && SkillCooldown[1] <= 0)
                     {
                         SetCooldown(1);
                         CollectMonster(mon.data);
@@ -314,7 +328,7 @@ public class MovementController : MonoBehaviour, Creature
             SetCooldown(3);
             _removeTrap = false;
             _isAttacking = false;
-            PlayerDataManager.Instance.suspicion += 10 * PlayerDataManager.Instance.eyeNum;
+            PlayerDataManager.Instance.suspicion += 40 * PlayerDataManager.Instance.eyeNum;
         }
     }
     private IEnumerator Concentration()

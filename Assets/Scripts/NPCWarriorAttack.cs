@@ -9,7 +9,9 @@ public class NPCWarriorAttack : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Monster")
         {
-            other.gameObject.GetComponent<Creature>().Hit(GetComponentInParent<NPC>().data._power,
+            var npcData = GetComponentInParent<NPC>().data;
+            int finalPower = npcData._power + (npcData._level * npcData._powerUp);
+            other.gameObject.GetComponent<Creature>().Hit(finalPower,
                 (other.transform.position - transform.parent.position).normalized, 1f);
 
             if (other.gameObject.tag == "Player")

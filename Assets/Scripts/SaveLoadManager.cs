@@ -28,6 +28,9 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 
         mySaveData.skillPoint = PlayerDataManager.Instance.skillPoint;
         mySaveData.skillLevels = PlayerDataManager.Instance.skillLevels;
+
+        mySaveData.power = PlayerDataManager.Instance.power;
+        mySaveData.defense = PlayerDataManager.Instance.defense;
         
         mySaveData.dayNum = GameManager.Instance.DayNum;
         mySaveData.currentPhase = (int)GameManager.Instance.CurrentPhase;
@@ -36,7 +39,7 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
         for (int i = 0; i < MonsterCollectionManager.Instance.CollectableMonsters.Count; i++)
         {
             mySaveData.collectedMonstersList[i] = MonsterCollectionManager.Instance.GetMonsterNumberByIndex(i);
-            Debug.Log(mySaveData.collectedMonstersList[i]);
+            Debug.Log("ASDGSDG " + mySaveData.collectedMonstersList[i]);
         }
     }
 
@@ -50,6 +53,9 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 
         PlayerDataManager.Instance.skillPoint = mySaveData.skillPoint;
         PlayerDataManager.Instance.skillLevels = mySaveData.skillLevels;
+
+         PlayerDataManager.Instance.power = mySaveData.power;
+         PlayerDataManager.Instance.defense = mySaveData.defense;
         
         GameManager.Instance.SetDay(mySaveData.dayNum);
         GameManager.Instance.MovePhase((DayPhase)mySaveData.currentPhase);
@@ -105,12 +111,13 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
     public void NewGameExe()
     {
         mySaveData = new SaveData();
+        GameManager.Instance.MovePhase(DayPhase.Morning);
         GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
         SceneManager.LoadScene("PrologueScene");
     }
 
     public void LoadGame()
     {
-        if (Load()) GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
+        if (Load()) GameSceneManager.Instance.LoadStage(MapStage.SecretGarden);
     }
 }

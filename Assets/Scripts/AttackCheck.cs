@@ -9,7 +9,7 @@ public class AttackCheck : MonoBehaviour
     {
         if (col.tag == "Monster")
         {
-            col.GetComponent<Creature>().Hit(10, 
+            col.GetComponent<Creature>().Hit(GetComponentInParent<MovementController>().power, 
                 (Vector2) (col.transform.position -transform.position).normalized,
                 1);
         }

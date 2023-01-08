@@ -45,23 +45,33 @@ public class Timer_UI : MonoBehaviour
                 {
                     delMonster[i].gameObject.SetActive(false);
                 }
+                
+                var delTrap = FindObjectsOfType<TrapForType>();
+                for(int i=0; i<delTrap.Length; i++)
+                {
+                    delTrap[i].gameObject.SetActive(false);
+                }
                 theSpawnManager.StopSpawn();
-
+                
                 theSpawnManager.createBoss();
-                LimitTime = 100;
+                LimitTime = 60;
                 boss = false;
             }
-
             else
             {
+                GameManager.Instance.MovePhase();
+                GameSceneManager.Instance.LoadStage((MapStage)0);
+            }
+        }
+        else
+        {
+            if (!boss && MonsterCollectionManager.Instance.CollectedMonsters[theSpawnManager.Monster_
+                    .GetComponent<Monster>().data] > 0)
+            {
+                GameManager.Instance.MovePhase();
                 GameManager.Instance.DungeonUnlockNumber += 1;
                 GameSceneManager.Instance.LoadStage((MapStage)0);
             }
-            
         }
-
-        
     }
-
-
 }

@@ -34,6 +34,7 @@ public class NPC : MonoBehaviour, Creature
 
     private void Start()
     {
+        maxHp = data._health + data._level * 20;
         hp = maxHp;
         
         _dir = Vector2.down;

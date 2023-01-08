@@ -1444,7 +1444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6682005814275936352, guid: bb4bd39e96da64f69bf922194fc9ab3f, type: 3}
       propertyPath: LimitTime
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6682005814275936352, guid: bb4bd39e96da64f69bf922194fc9ab3f, type: 3}
       propertyPath: theSpawnManager
@@ -21879,8 +21879,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a065e00e014a24b9fc4d7455311dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageLevel: 0
-  monsters: []
+  stageLevel: 3
+  monsters:
+  - {fileID: 8047042240177512002, guid: d3a24a785c75c8b4c93989459b12fc03, type: 3}
+  - {fileID: 4797275213767641433, guid: ee35e9754aebc064897fb53ebada25ff, type: 3}
+  - {fileID: 407170960251581450, guid: 2e44931b8605a4546a4e12e575c02a8f, type: 3}
   bossmonster: {fileID: 1272718197862166375, guid: b270e0e13d8bb594f9760edd54bd0c8e, type: 3}
 --- !u!4 &1876859862
 Transform:

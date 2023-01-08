@@ -408,8 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a065e00e014a24b9fc4d7455311dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageLevel: 0
-  monsters: []
+  stageLevel: 5
+  monsters:
+  - {fileID: 3954124298271785647, guid: 3356edfbb6c9ad84aad50cf48890dfa9, type: 3}
+  - {fileID: 980813544547751629, guid: 68de253e21f1a7747b57115c21d80444, type: 3}
+  - {fileID: 483862819205483926, guid: eae547e8742ed2044813154819eafff8, type: 3}
   bossmonster: {fileID: 1421475882792772789, guid: 50ee25777cc60cc4d8c79334a8b385d9, type: 3}
 --- !u!4 &439243333
 Transform:
@@ -15776,7 +15779,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6682005814275936352, guid: bb4bd39e96da64f69bf922194fc9ab3f, type: 3}
       propertyPath: LimitTime
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6682005814275936352, guid: bb4bd39e96da64f69bf922194fc9ab3f, type: 3}
       propertyPath: theSpawnManager

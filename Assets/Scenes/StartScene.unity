@@ -2697,6 +2697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7029feeea5b9a4977bf257bd738cd60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcData1: {fileID: 11400000, guid: 20895e710a860e84595ca4adad30f18d, type: 2}
+  npcData2: {fileID: 11400000, guid: 3e7e74f1f706c8347913b122d1f0c945, type: 2}
   skillInfos: {fileID: 11400000, guid: 178777fccc377440a9b54e3c2baaf131, type: 2}
   hp: 100
   maxHp: 100
@@ -2704,6 +2706,8 @@ MonoBehaviour:
   maxExp: 100
   level: 1
   skillPoint: 0
+  power: 10
+  defense: 10
   suspicion: 0
   maxSuspicion: 100
   eyeNum: 0

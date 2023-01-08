@@ -769,7 +769,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6682005814275936352, guid: bb4bd39e96da64f69bf922194fc9ab3f, type: 3}
       propertyPath: LimitTime
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6682005814275936352, guid: bb4bd39e96da64f69bf922194fc9ab3f, type: 3}
       propertyPath: theSpawnManager
