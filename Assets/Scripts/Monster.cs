@@ -55,9 +55,12 @@ public class Monster : MonoBehaviour, Creature, Interactable
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (_isAttack && ( collision.collider.CompareTag("Player") ||  collision.collider.CompareTag("NPC"))) 
+        {
             collision.collider.GetComponent<Creature>().Hit(data._power, 
                 (Vector2) (collision.collider.transform.position - transform.position).normalized,
                 0.5f);
+        }
+
 
         if(collision.collider.CompareTag("Left"))
         {
@@ -91,8 +94,8 @@ public class Monster : MonoBehaviour, Creature, Interactable
             Debug.Log("속도값" + monster.velocity);
         } else if (collision.collider.CompareTag("Trap"))
         {
-            GetComponent<Collider>().GetComponent<Animator>().SetTrigger("TrapActivate");
-            StartCoroutine(TrapDestroy(GetComponent<Collider>().gameObject));
+            collision.collider.GetComponent<Animator>().SetTrigger("TrapActivate");
+            StartCoroutine(TrapDestroy(collision.collider.gameObject));
             StartCoroutine(Trapped());
             trapped = true;
         }

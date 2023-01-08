@@ -20,6 +20,6 @@ public class NPCRemote : NPC
         ar.transform.SetParent(transform);
 
         var a = ar.GetComponent<Arrow>();
-        a.Set(10, dir, data._power);
+        a.Set(data._power + data._level * data._powerUp, dir, data._power);
     }
 }

@@ -18,6 +18,9 @@ public class MovementController : MonoBehaviour, Creature
     public float suspicion {get => PlayerDataManager.Instance.suspicion; set => PlayerDataManager.Instance.suspicion = value;}
     public float maxSuspicion {get => PlayerDataManager.Instance.maxSuspicion; set => PlayerDataManager.Instance.maxSuspicion = value;}
 
+    public int power {get => PlayerDataManager.Instance.power; set => PlayerDataManager.Instance.power = value;}
+    public int defense {get => PlayerDataManager.Instance.defense; set => PlayerDataManager.Instance.defense = value;}
+
     public int skillPoint {get => PlayerDataManager.Instance.skillPoint; set => PlayerDataManager.Instance.skillPoint = value;}
     
     public float[] SkillLevels {get => PlayerDataManager.Instance.skillLevels; set => PlayerDataManager.Instance.skillLevels = value;}
@@ -197,6 +200,17 @@ public class MovementController : MonoBehaviour, Creature
                 else _animator.SetFloat("direction", 0);
             }
         }
+    }
+
+    private void LevelUp()
+    {
+        level++;
+        maxExp += 100;
+        maxHp += 20;
+        power += 2;
+        defense += 2;
+        PlayerDataManager.Instance.npcData1._level++;
+        PlayerDataManager.Instance.npcData2._level++;
     }
 
     private void SetCooldown(int index)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDataManager : UnitySingleton<PlayerDataManager>
 {
+    [SerializeField] public NPCData npcData1, npcData2;
+
     [SerializeField] public PlayerSkillInfos skillInfos;
 
     [SerializeField]
@@ -15,6 +17,9 @@ public class PlayerDataManager : UnitySingleton<PlayerDataManager>
     public int level;
     [SerializeField]
     public int skillPoint;
+
+    public int power;
+    public int defense;
 
     [SerializeField] 
     public float suspicion;

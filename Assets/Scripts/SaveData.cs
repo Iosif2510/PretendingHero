@@ -11,6 +11,7 @@ public class SaveData
     public float hp, maxHp;
     public float exp, maxExp;
     public int level;
+    public int power, defense;
 
     public int skillPoint;
 
