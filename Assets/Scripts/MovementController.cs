@@ -235,7 +235,7 @@ public class MovementController : MonoBehaviour, Creature
                     if (mon.trapped && SkillCooldown[3] <= 0 && SkillLevels[3] > 0)
                     {
                         StartCoroutine(RemoveTrap(mon));
-                    } else if (mon.currentHealth <= mon.data._health * 0.2f )
+                    } else if (mon.currentHealth <= mon.data._health * 0.2f && SkillCooldown[1] <= 0)
                     {
                         SetCooldown(1);
                         CollectMonster(mon.data);
@@ -314,7 +314,7 @@ public class MovementController : MonoBehaviour, Creature
             SetCooldown(3);
             _removeTrap = false;
             _isAttacking = false;
-            PlayerDataManager.Instance.suspicion += 10 * PlayerDataManager.Instance.eyeNum;
+            PlayerDataManager.Instance.suspicion += 40 * PlayerDataManager.Instance.eyeNum;
         }
     }
     private IEnumerator Concentration()

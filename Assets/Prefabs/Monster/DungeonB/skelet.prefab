@@ -143,13 +143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276714a9e673b4afdbd338907eb1663e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 94449ce28d03bc44c9eaa09e84dca2f8, type: 2}
+  data: {fileID: 11400000, guid: 728f0701ab0001c47aa84ed87176fd17, type: 2}
   frequency: 0
   nextMove: 0
   trapped: 0
   rescued: 0
   boxOffset: {x: 0, y: 0}
-  attackBoundary: {x: 0, y: 0}
+  attackBoundary: {x: 7, y: 7}
   currentHealth: 0
 --- !u!61 &6046087213113223334
 BoxCollider2D:

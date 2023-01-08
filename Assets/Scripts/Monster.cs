@@ -87,12 +87,12 @@ public class Monster : MonoBehaviour, Creature, Interactable
             Vector2 dirVec = new Vector2(yourloc.x - mypos.x, yourloc.y - mypos.y);
             dirVec = dirVec.normalized * (-2);
             monster.velocity = new Vector2(dirVec.x, dirVec.y);
-
+ 
             Debug.Log("속도값" + monster.velocity);
         } else if (collision.collider.CompareTag("Trap"))
         {
-            GetComponent<Collider>().GetComponent<Animator>().SetTrigger("TrapActivate");
-            StartCoroutine(TrapDestroy(GetComponent<Collider>().gameObject));
+            collision.collider.GetComponent<Animator>().SetTrigger("TrapActivate");
+            StartCoroutine(TrapDestroy(collision.collider.gameObject));
             StartCoroutine(Trapped());
             trapped = true;
         }

@@ -153,13 +153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276714a9e673b4afdbd338907eb1663e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: a85fc60aa40eb794d8ba95f902f16387, type: 2}
+  data: {fileID: 11400000, guid: 6c86bce4be585394d9a1b1e3a89be48c, type: 2}
   frequency: 0
   nextMove: 0
   trapped: 0
   rescued: 0
   boxOffset: {x: 0, y: 0}
-  attackBoundary: {x: 0, y: 0}
+  attackBoundary: {x: 6, y: 6}
   currentHealth: 0
 --- !u!50 &594944249721154016
 Rigidbody2D:
