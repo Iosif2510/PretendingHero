@@ -28,6 +28,21 @@ public class SpawnManager : MonoBehaviour
     {
         MaxMonster = 4*stageLevel + 3;       // Max 몬스터 수
         
+        InvokeRepeating("spawnMonster", 1, 2); //1초후 부터, 2초마다 반복해서 실행
+    
+    }
+
+    public void StopSpawn()
+    {
+        CancelInvoke("spawnMonster");
+    }
+
+       
+    void spawnMonster()
+    {
+        
+        int randomnum = Random.Range(0,3);  //랜덤한 몬스터 번호
+        
         switch(stageLevel)
         {
             case 1 :
@@ -55,20 +70,6 @@ public class SpawnManager : MonoBehaviour
                 randomY = Random.Range(-15.0f, 13.0f);
                 break;
         }
-        InvokeRepeating("spawnMonster", 1, 2); //1초후 부터, 2초마다 반복해서 실행
-    
-    }
-
-    public void StopSpawn()
-    {
-        CancelInvoke("spawnMonster");
-    }
-
-       
-    void spawnMonster()
-    {
-        
-        int randomnum = Random.Range(0,3);  //랜덤한 몬스터 번호
 
         if (monsterCount < MaxMonster)
         {
