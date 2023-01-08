@@ -39,7 +39,7 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
         for (int i = 0; i < MonsterCollectionManager.Instance.CollectableMonsters.Count; i++)
         {
             mySaveData.collectedMonstersList[i] = MonsterCollectionManager.Instance.GetMonsterNumberByIndex(i);
-            Debug.Log("ASDGSDG " + mySaveData.collectedMonstersList[i]);
+            // Debug.Log($"Monster {i}: {mySaveData.collectedMonstersList[i]}");
         }
     }
 
@@ -63,19 +63,21 @@ public class SaveLoadManager : UnitySingleton<SaveLoadManager>
 
         for (int i = 0; i < MonsterCollectionManager.Instance.CollectableMonsters.Count; i++)
         {
-            var monster = MonsterCollectionManager.Instance.CollectableMonsters[i];
+            MonsterData monster = MonsterCollectionManager.Instance.CollectableMonsters[i];
+            // Debug.Log($"Monster {monster}: {MonsterCollectionManager.Instance.CollectedMonsters[monster]}");
             MonsterCollectionManager.Instance.CollectMonster(monster, mySaveData.collectedMonstersList[i]);
+            // Debug.Log($"Monster {monster}: {MonsterCollectionManager.Instance.CollectedMonsters[monster]}");
         }
 
-        switch ((DayPhase)mySaveData.currentPhase)
-        {
-            case DayPhase.Morning:
-                GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
-                break;
-            case DayPhase.Night:
-                GameSceneManager.Instance.LoadStage(MapStage.SecretGarden);
-                break;
-        }
+        // switch ((DayPhase)mySaveData.currentPhase)
+        // {
+        //     case DayPhase.Morning:
+        //         GameSceneManager.Instance.LoadStage(MapStage.MorningScene);
+        //         break;
+        //     case DayPhase.Night:
+        //         GameSceneManager.Instance.LoadStage(MapStage.SecretGarden);
+        //         break;
+        // }
     }
 
     public void Save()
